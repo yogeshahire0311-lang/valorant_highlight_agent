@@ -1,0 +1,11 @@
+input_video: "videos/match1.mp4"
+
+clip_length: 90   # seconds
+highlight_threshold: 0.8
+
+output_folder: "output"
+
+upload:
+  enabled: false
+  client_secret: "configs/client_secret.json"
+  privacy: "unlisted"
