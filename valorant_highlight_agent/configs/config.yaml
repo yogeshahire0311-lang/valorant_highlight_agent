@@ -1,11 +1,21 @@
-input_video: "videos/match1.mp4"
 
 clip_length: 90   # seconds
 highlight_threshold: 0.8
 
-output_folder: "output"
 
+# Input/Output
+input_video: "input_video/match1.mp4"
+output_folder: "output"
+archive_folder: "archive"
+
+# Process mode
+process_all: true   # set true to process all mp4s in videos_folder
+videos_folder: "videos"
+
+# Upload settings
 upload:
   enabled: false
   client_secret: "configs/client_secret.json"
-  privacy: "unlisted"
+  title_template: "Valorant Highlight {idx}"
+  description_template: "Epic Valorant play at {timestamp}"
+  tags: ["Valorant", "Gaming", "Highlight"]

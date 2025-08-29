@@ -3,6 +3,7 @@ import pickle
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
 import googleapiclient.errors
+import googleapiclient.http
 
 class YouTubeUploader:
     def __init__(self, config):
@@ -27,14 +28,14 @@ class YouTubeUploader:
 
         return googleapiclient.discovery.build("youtube", "v3", credentials=creds)
 
-    def upload(self, filepath):
+    def upload(self, filepath, title="Valorant Highlight", description="Highlight clip"):
         request = self.service.videos().insert(
             part="snippet,status",
             body={
                 "snippet": {
-                    "title": os.path.basename(filepath),
-                    "description": "Auto uploaded Valorant highlight",
-                    "tags": ["valorant", "highlight", "gaming"],
+                    "title": title,
+                    "description": description,
+                    "tags": ["valorant", "highlight", "gaming", "fps", "esports"],
                     "categoryId": "20"
                 },
                 "status": {

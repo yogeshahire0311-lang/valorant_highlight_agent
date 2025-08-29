@@ -3,14 +3,19 @@ import os
 
 class CaptionGenerator:
     def __init__(self):
+        # Valorant-specific templates for more engaging captions
         self.templates = [
-            "🔥 Epic moment in Valorant — clip #{idx}",
-            "💥 Crazy highlight at {timestamp}",
-            "🎯 Insane play — Valorant clutch #{idx}",
-            "⚡ Non-stop action! Must-watch clip #{idx}"
+            "🔥 Insane Ace at {timestamp} — Valorant Highlight #{idx}",
+            "💥 1v5 Clutch Moment — Unbelievable Play #{idx}",
+            "🎯 Crazy Headshot Streak at {timestamp}",
+            "⚡ Non-stop action! Epic Round #{idx}",
+            "🚀 Jaw-dropping Flick Shot at {timestamp}",
+            "😱 Wild Spray Control — Clip #{idx}",
+            "🏆 Game-Changing Clutch at {timestamp}"
         ]
 
     def generate(self, idx, start_time):
+        print(f"[INFO] Generating caption for clip {idx}...")
         template = random.choice(self.templates)
         minutes = int(start_time // 60)
         seconds = int(start_time % 60)
